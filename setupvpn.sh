@@ -1,4 +1,8 @@
+#!/bin/bash
+
+sudo yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 sudo tee /etc/yum.repos.d/mongodb-org-4.2.repo << EOF
+
 [mongodb-org-4.2]
 name=MongoDB Repository
 baseurl=https://repo.mongodb.org/yum/redhat/8/mongodb-org/4.2/x86_64/
@@ -15,7 +19,6 @@ gpgcheck=1
 enabled=1
 EOF
 
-sudo yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys 7568D9BB55FF9E5287D586017AE645C0CF8E292A
 gpg --armor --export 7568D9BB55FF9E5287D586017AE645C0CF8E292A > key.tmp; sudo rpm --import key.tmp; rm -f key.tmp
 sudo yum -y install pritunl mongodb-org
