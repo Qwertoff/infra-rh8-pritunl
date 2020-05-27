@@ -1,6 +1,8 @@
 #!/bin/bash
+sleep 2m
 
 sudo yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+
 sudo tee /etc/yum.repos.d/mongodb-org-4.2.repo << EOF
 
 [mongodb-org-4.2]
